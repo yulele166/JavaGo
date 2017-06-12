@@ -20,11 +20,33 @@
     <!-- 访问静态资源 -->
     <mvc:default-servlet-handler />
     
+    <!-- HandlerMapping -->
+	<bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/>
+	 
+	<!-- HandlerAdapter -->
+	<bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter"/>
+    
     <!-- 视图解析器 -->
-    <bean
+    <!-- <bean
         class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/view/"></property>
         <property name="suffix" value=".jsp"></property>
-    </bean>
+    </bean> -->
 
+	<!--springMVC+thymeleaf的跳转页面配置-->
+    <bean id="templateResolver" class="org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver">
+       <property name="prefix" value="/WEB-INF/views/" />
+       <property name="suffix" value=".html" />
+       <property name="templateMode" value="HTML5" />
+       <property name="cacheable" value="false" />
+     </bean>
+
+     <bean id="templateEngine" class="org.thymeleaf.spring4.SpringTemplateEngine">
+        <property name="templateResolver" ref="templateResolver" />
+     </bean>
+
+     <bean class="org.thymeleaf.spring4.view.ThymeleafViewResolver">
+        <property name="templateEngine" ref="templateEngine" />
+        <property name="characterEncoding" value="UTF-8"/>
+     </bean>
 </beans>
