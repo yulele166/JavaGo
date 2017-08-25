@@ -26,10 +26,12 @@ public class SelectionSort {
                     min = j;
                 }
             }
-            // 将找到的第i个小的数值放在第i个位置上
-            temp = a[min];
-            a[min] = a[i];
-            a[i] = temp;
+            if(i!=min){
+            	// 将找到的第i个小的数值放在第i个位置上
+                temp = a[min];
+                a[min] = a[i];
+                a[i] = temp;
+            }
         }
 
     }

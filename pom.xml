@@ -44,6 +44,34 @@
 	    <artifactId>thymeleaf-spring4</artifactId>
 	    <version>3.0.6.RELEASE</version>
 	</dependency>
+	
+	<!-- Spring 整合Shiro需要的依赖 -->  
+	<dependency>  
+	    <groupId>org.apache.shiro</groupId>  
+	    <artifactId>shiro-core</artifactId>  
+	    <version>1.2.1</version>  
+	</dependency>  
+	<dependency>  
+	    <groupId>org.apache.shiro</groupId>  
+	    <artifactId>shiro-web</artifactId>  
+	    <version>1.2.1</version>  
+	</dependency>  
+	<dependency>  
+	    <groupId>org.apache.shiro</groupId>  
+	    <artifactId>shiro-ehcache</artifactId>  
+	    <version>1.2.1</version>  
+	</dependency>  
+	<dependency>  
+	    <groupId>org.apache.shiro</groupId>  
+	    <artifactId>shiro-spring</artifactId>  
+	    <version>1.2.1</version>  
+	</dependency>
+	
+	<dependency>
+         <groupId>com.alibaba</groupId>
+         <artifactId>druid</artifactId>
+         <version>1.0.18</version>
+     </dependency>
   </dependencies>
   <build>
     <finalName>JavaGo</finalName>
